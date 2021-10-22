@@ -1,0 +1,31 @@
+<?php
+class Model_latihan1 extends CI_Model
+{
+    //membuat variable untuk menampung nilai
+    public $nilai1, $nilai2, $hasil;
+
+    //method penjumlahan
+    public function jumlah($nilai1 = null, $nilai2 = null)
+    {
+        $this->nilai1 = $nil1;
+        $this->nilai2 = $nil2;
+        $this->hasil = $this->nilai1 + $this->nilai2;
+        return $this->hasil;
+    }
+}
+
+<?php
+class Latihan1 extends CI_Controller
+{
+public function index()
+    {
+        echo "<b><h2>Selamat Datang.. Selamat belajar Web Programing</h2><b>"
+    }
+    public function penjumalahan($n1, $n2)
+    {
+        $this->load->model('Model_latihan1');
+        $hasil = $this->Model_latihan1->jumlah($n1, $n2);
+        echo "hasil penjumlahan dari " . $n1 . "+" . $n2 . "=" . $hasil;
+
+    }
+}
